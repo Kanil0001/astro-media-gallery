@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro & Amateur Media Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-star"></i> Astro & Amateur Media Gallery</h1>
+            <p>Share your telescope captures, astrophotography, and space images!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <h2><i class="fas fa-upload"></i> Upload Your Media</h2>
+            <div class="upload-form">
+                <input type="file" id="mediaFile" accept="image/*,video/*" multiple>
+                <input type="text" id="redditUsername" placeholder="Your Reddit username">
+                <textarea id="description" placeholder="Describe your capture (optional)"></textarea>
+                <button onclick="uploadMedia()" class="btn-primary">
+                    <i class="fas fa-rocket"></i> Share to Galaxy
+                </button>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h2><i class="fas fa-images"></i> Community Gallery</h2>
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterMedia('all')">All</button>
+                <button class="filter-btn" onclick="filterMedia('images')">Images</button>
+                <button class="filter-btn" onclick="filterMedia('videos')">Videos</button>
+                <button class="filter-btn" onclick="filterMedia('recent')">Recent</button>
+            </div>
+            <div id="gallery" class="gallery-grid"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
